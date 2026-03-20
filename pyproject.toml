@@ -1,6 +1,6 @@
 [project]
 name = "rest-api-tech-test-kit"
-version = "0.1.0"
+version = "1.0"
 description = "REST API created as a solution to the first block of the technical test kit"
 readme = "README.md"
 requires-python = ">=3.10"
