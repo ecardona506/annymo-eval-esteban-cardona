@@ -3,10 +3,10 @@ from flask_sqlalchemy import SQLAlchemy
 
 # Initialize extensions
 
-# Database instance
+# Database extension instance
 db = SQLAlchemy()
 
-# API instance
+# API extension instance
 api_extension = Api(
     title="Annymo Eval REST API",
     version="1.0",
