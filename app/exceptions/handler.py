@@ -6,3 +6,13 @@ def register_error_handlers(app: Flask):
     @app.errorhandler(ApiException)
     def handle_app_exception(e: ApiException):
         return jsonify(e.to_dict()), e.status_code
+
+    @app.errorhandler(Exception)
+    def handle_unexpected_error(e: Exception):
+        # Log the error here if needed
+        # app.logger.error(f"Unexpected error: {str(e)}")
+        return jsonify({
+            "error": "InternalServerError",
+            "message": "An unexpected error occurred",
+            "status_code": 500
+        }), 500
