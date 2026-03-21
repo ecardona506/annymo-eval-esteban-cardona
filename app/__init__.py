@@ -1,6 +1,6 @@
 from flask import Flask
 from app.config import config_map
-from app.extensions import db
+from app.extensions import db, api_extension
 from app.api.v1 import register_v1
 from app.exceptions.handler import register_error_handlers
 import os
@@ -14,7 +14,8 @@ def create_app() -> Flask:
     db.init_app(app)
 
     # Register namespaces for v1 API
-    register_v1(app)
+    api_extension.init_app(app)
+    register_v1(api_extension)
 
     # Register error handlers
     register_error_handlers(app)

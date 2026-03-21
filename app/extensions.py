@@ -7,7 +7,7 @@ from flask_sqlalchemy import SQLAlchemy
 db = SQLAlchemy()
 
 # API instance
-api = Api(
+api_extension = Api(
     title="Annymo Eval REST API",
     version="1.0",
     description="REST API created as a solution to the first block of the technical test kit.",
