@@ -1,6 +1,6 @@
 from flask import Flask
 from app.config import config_map
-from app.extensions import db, api_extension
+from app.extensions import db, api_extension, migrate   
 from app.api.v1 import register_v1
 from app.exceptions.handler import register_error_handlers
 import os
@@ -12,6 +12,9 @@ def create_app() -> Flask:
 
     # Init extensions
     db.init_app(app)
+
+    # Initialize Flask-Migrateate with the Flask app and SQLAlchemy database
+    migrate.init_app(app, db)
 
     # Register namespaces for v1 API
     api_extension.init_app(app)

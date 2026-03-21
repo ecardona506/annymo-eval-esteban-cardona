@@ -1,10 +1,14 @@
 from flask_restx import Api
 from flask_sqlalchemy import SQLAlchemy
+from flask_migrate import Migrate
 
 # Initialize extensions
 
 # Database extension instance
 db = SQLAlchemy()
+
+# Migrate extension instance
+migrate = Migrate()
 
 # API extension instance
 api_extension = Api(
