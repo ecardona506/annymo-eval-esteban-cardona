@@ -9,7 +9,11 @@ class UserService:
         user = User(**user_data)
         user.password = UserService.hash_password(user)
         db.session.add(user)
-        db.session.commit()
+        try:
+            db.session.commit()
+        except Exception as e:
+            db.session.rollback()
+            raise e
         return user
     
     @staticmethod
