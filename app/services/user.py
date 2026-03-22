@@ -40,3 +40,15 @@ class UserService:
     def get_user_by_phone_number(phone_number: str) -> User:
         """Retrieve a user by their phone number"""
         return User.query.filter_by(phone_number=phone_number).first()
+    
+    @staticmethod
+    def get_all_users(page: int = 1, per_page: int = 10) -> dict:
+        """Retrieve all users with pagination"""
+        pagination = User.query.paginate(page=page, per_page=per_page, error_out=False)
+        return {
+            'users': pagination.items,
+            'page': pagination.page,
+            'per_page': pagination.per_page,
+            'total': pagination.total,
+            'pages': pagination.pages
+        }
