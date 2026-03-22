@@ -1,6 +1,8 @@
 #!/bin/sh
 set -e
 
+echo ""
+
 echo "Running migrations"
 uv run flask db upgrade
 
