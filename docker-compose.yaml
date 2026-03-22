@@ -10,6 +10,8 @@ services:
       FLASK_APP: main.py
       FLASK_ENV: ${FLASK_ENV}
       SQLALCHEMY_DATABASE_URI: ${SQLALCHEMY_DATABASE_URI}
+      SECRET_KEY: ${SECRET_KEY}
+      WEBHOOK_SECRET_KEY: ${WEBHOOK_SECRET_KEY}
     depends_on:
       db:
         condition: service_healthy
