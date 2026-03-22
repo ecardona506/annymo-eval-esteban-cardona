@@ -1,13 +1,16 @@
 [project]
-name = "rest-api-tech-test-kit"
+name = "annymo-eval-esteban-cardona"
 version = "1.0"
 description = "REST API created as a solution to the first block of the technical test kit"
 readme = "README.md"
 requires-python = ">=3.10"
 dependencies = [
     "flask>=3.1.3",
+    "flask-bcrypt>=1.0.1",
     "flask-marshmallow>=1.4.0",
+    "flask-migrate>=4.1.0",
     "flask-restx>=1.3.2",
     "flask-sqlalchemy>=3.1.1",
+    "psycopg2-binary>=2.9.11",
     "pytest>=9.0.2",
 ]

@@ -9,6 +9,8 @@ RUN uv sync --frozen --no-dev
 
 COPY . .
 
+RUN chmod +x entrypoint.sh
+
 EXPOSE 5000
 
-CMD ["uv", "run", "flask", "run", "--host=0.0.0.0"]
+ENTRYPOINT ["./entrypoint.sh"] 

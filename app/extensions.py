@@ -1,13 +1,17 @@
 from flask_restx import Api
 from flask_sqlalchemy import SQLAlchemy
+from flask_migrate import Migrate
 
 # Initialize extensions
 
-# Database instance
+# Database extension instance
 db = SQLAlchemy()
 
-# API instance
-api = Api(
+# Migrate extension instance
+migrate = Migrate()
+
+# API extension instance
+api_extension = Api(
     title="Annymo Eval REST API",
     version="1.0",
     description="REST API created as a solution to the first block of the technical test kit.",
